@@ -12,32 +12,14 @@ then
     #Directory exists
     mkdir "$new_subFolder"
     sleep 2
-    find "features/reports/temp" -name '*.json' -exec mv {} "$new_subFolder" \;
+    find "features/reports/temp" -type f \( -iname \*.json -o -iname \*.png \) -exec mv {} "$new_subFolder" \;
 else
     #Directory does not exist
     mkdir "features/reports/$new_folder"
     sleep 2
     mkdir "$new_subFolder"
     sleep 2
-    find "features/reports/temp" -name '*.json' -exec mv {} "$new_subFolder" \;
+    find "features/reports/temp" -type f \( -iname \*.json -o -iname \*.png \) -exec mv {} "$new_subFolder" \;
 fi
-
-#Check if screenshots exists then move all of them
-	if [ "$(ls -A "features/screenshots/temp")" ]
-	then
-    if [ -d "features/screenshots/$new_folder" ]
-    then
-        #Folder exists
-        mkdir "$new_subFolder_sc"
-        sleep 2
-        find "features/screenshots/temp" -name '*.png' -exec mv {} "$new_subFolder_sc" \;
-    else
-       #Subfolder does not exist
-       mkdir "features/screenshots/$new_folder"
-       sleep 2
-       mkdir "$new_subFolder_sc"
-       find "features/screenshots/temp" -name '*.png' -exec mv {} "$new_subFolder_sc" \;
-    fi
-	fi
 
 allure serve "$new_subFolder"
