@@ -1,6 +1,9 @@
 import time
 
 from appium import webdriver
+from allure_commons.types import AttachmentType
+import allure
+
 
 def before_all(context):
     try:
@@ -20,6 +23,12 @@ def before_all(context):
         )
     except Exception as e:
         print(str(e))
+
+
+def after_step(context, step):
+    if step.status == 'failed':
+        allure.attach(context.driver.get_screenshot_as_png(), name="screenshot",
+                      attachment_type=AttachmentType.PNG)
 
 
 def after_all(context):

@@ -34,11 +34,13 @@ class RemoveFromBag:
 
     def verify_product_removed(self):
 
+        text = ""
         r = Actions(self._context).get_attribute("text", self.layout, locatorType="xpath")
-        text = unidecode.unidecode(r)
-        text = text.replace('\r', '').replace('\n', '')
+        if r is not None:
+            text = unidecode.unidecode(r)
+            text = text.replace('\r', '').replace('\n', '')
 
-        if text in self.no_products_txt:
+        if text == self.no_products_txt:
             return True
         else:
             return False
