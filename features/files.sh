@@ -22,4 +22,4 @@ else
     find "features/reports/temp" -type f \( -iname \*.json -o -iname \*.png \) -exec mv {} "$new_subFolder" \;
 fi
 
-allure serve "$new_subFolder"
+#allure serve "$new_subFolder"

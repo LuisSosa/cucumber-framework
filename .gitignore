@@ -1,3 +1,6 @@
 .DS_store
 .idea/
 __pycache__/
+features/reports
+venv/
+automation.log
