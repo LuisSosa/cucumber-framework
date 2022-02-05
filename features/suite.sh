@@ -4,4 +4,4 @@ features/search.feature \
 features/add_product_to_bag.feature \
 features/remove_from_bag.feature
 
-#sh "features/files.sh"
+sh "features/files.sh"
