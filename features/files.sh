@@ -1,5 +1,6 @@
 #! /bin/sh
 
+rm automation.log
 #Check if exists path and remove all files generated for allure report
 if [ -d "features/reports/temp" ]
 then
