@@ -30,7 +30,8 @@ class RemoveFromBag:
     def tap_delete_button(self):
         Actions(self._context).tap_on_element(self.menu_item)
         time.sleep(4)
-        Actions(self._context).tap_by_coordinates(286, 607)
+        #Actions(self._context).tap_by_coordinates(286, 607)
+        Actions(self._context).tap_by_coordinates(236, 1018)
 
     def verify_product_removed(self):
 
