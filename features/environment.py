@@ -8,11 +8,11 @@ import allure
 def before_all(context):
     try:
         desired_cap = {
-            "deviceName": "Galaxy Note9",
-            "udid": "266a0ad007057ece",
+            "deviceName": "Galaxy A7",
+            "udid": "192.168.1.76:5555",
             "automationName": "UiAutomator2",
             "platformName": "Android",
-            "platformVersion": "10",
+            "platformVersion": "7.0",
             "appPackage": "mx.com.liverpool.shoppingapp",
             "appActivity": "mx.com.liverpool.shoppingapp.splash.SplashActivity"
 
