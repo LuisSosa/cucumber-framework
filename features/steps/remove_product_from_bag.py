@@ -4,7 +4,7 @@ from features.helper.remove_from_bag_actions import RemoveFromBag
 
 @given('the user added a product to the bag')
 def step_impl(context):
-    assert RemoveFromBag(context).verify_product_added() == True
+    assert RemoveFromBag(context).verify_product_added()
 
 
 @when('tapping the delete button')
@@ -14,4 +14,4 @@ def step_impl(context):
 
 @then('the product is removed successfully')
 def step_impl(context):
-    assert RemoveFromBag(context).verify_product_removed() == True
+    assert RemoveFromBag(context).verify_product_removed()

@@ -14,4 +14,4 @@ def step_impl(context):
 
 @then('the product is added to the bag')
 def step_impl(context):
-    assert AddToBag(context).verify_added_msg() == True
+    assert AddToBag(context).verify_added_msg()
